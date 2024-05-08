@@ -1,25 +1,684 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final for Dylan Bellinger</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+<!-- This is a comment line which won't be rendered by any HTML browser -->
 
-<div id="root"></div>
+
+<style>
+
+.title {
+  background-color: #3aa;
+  color: yellow;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 32px;
+}
+
+.sectionheading {
+  background-color: #a77;
+  color: black;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="title"> 2. Here are the JavaScript array methods:</div>
+
+<button class="collapsible">.push()</button>
+<div class="content">
+  <p>adds one or more elements to the end of an array.</p>
+</div>
+<button class="collapsible">.pop()</button>
+<div class="content">
+  <p>removes the last element from an array and returns that element.</p>
+</div>
+<button class="collapsible">.shift()</button>
+<div class="content">
+  <p>removes the first element from an array and returns that element, shifting all subsequent elements to a lower index.</p>
+</div>
+<button class="collapsible">.unshift()</button>
+<div class="content">
+  <p>adds one or more elements to the beginning of an array.</p>
+</div>
+<button class="collapsible">queue</button>
+<div class="content">
+  <p>let q = [];
+    q.push(“First”);
+    // This adds an element to the front of the queue
+    q.push(“Second”);
+    // now queue looks like [“First”, “Second”]
+    q.shift();
+    // now queue looks like [“Second”]. Here we removed the first element, returning said element and shifting every subsequent element back one.
+  </p>
+</div>
+<button class="collapsible">stack</button>
+<div class="content">
+  <p>Let s = [1, 2, 3, 4]; // This is the stack
+    s.push(5); // This results in [1,2,3,4,5]
+    s.pop(); // Here we remove the last element added and return that value.
+  </p>
+</div>
+
+<div class="title"> 3. js to dexcribe student with array</div>
+<button class="collapsible">student class</button>
+<div class="content">
+  <p>
+    class Student {
+      constructor(fname, lname, age) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+      }
+    }
+  </p>
+</div>
+<button class="collapsible">student array</button>
+<div class="content">
+  <p>
+  const students = [
+    new Student("John", "Doe", 20),
+    new Student("Jane", "Smith", 22),
+    new Student("Alice", "Johnson", 21)
+  ];
+  </p>
+</div>
+
+<div class="title"> 4. netlify and back4APP</div>
+<button class="collapsible">Differences</button>
+<div class="content">
+  <p>
+    Focus and Services: Netlify specializes in hosting static websites and offers features like continuous deployment and serverless functions. Back4App provides backend infrastructure and services such as databases and user authentication for mobile and web apps.
+    Target Audience: Netlify targets front-end developers or teams focusing on static sites. Back4App caters to developers needing scalable backend infrastructure for their mobile and web applications.    
+  </p>
+</div>
+<button class="collapsible">competitors</button>
+<div class="content">
+  <p>
+    Some competitors are as follows:
+		<ol>
+			<li>Firebase: Provides hosting, real-time database, authentication, cloud functions, and more, making it a strong competitor for both Netlify and Back4App.</li>
+      <li>AWS Amplify: Offers hosting, authentication, data storage, and serverless functions, providing a comprehensive solution similar to both Netlify and Back4App within the AWS ecosystem.</li>
+      <li>Vercel: Specializes in hosting static sites and serverless functions, similar to Netlify, but also offers backend functionality through serverless functions, competing with Back4App in certain aspects.</li>
+		</ol>
+  </p>
+</div>
+
+<div class="title"> 5. Selectors</div>
+<button class="collapsible">Compound Selector</button>
+<div class="content">
+  <p>
+    A compound selector is formed by combining two or more simple selectors. For example, h1.special selects all <h1> elements with the class "special".
+  </p>
+</div>
+
+<button class="collapsible">Attribute Selector</button>
+<div class="content">
+  <p>
+    An attribute selector targets elements based on their attributes and attribute values. For example, [type="submit"] selects all elements with the attribute type set to "submit".
+  </p>
+</div>
+<button class="collapsible">Other Selectors</button>
+<div class="content">
+	<p>List:
+		<ol>
+			<li>1.	Universal Selector: *</li>
+			<li>2.	Class Selector: .classname</li>
+			<li>3.	ID Selector: #idname</li>
+      <li>4.	Descendant Selector: ancestor descendant</li>
+      <li>5.	Child Selector: parent > child</li>
+      <li>6.	Adjacent Sibling Selector: element + sibling</li>
+      <li>7.	General Sibling Selector: element ~ sibling</li>
+      <li>8.	Pseudo-class Selector: :pseudo-class (e.g., :hover, :nth-child(n))</li>
+		</ol>
+	</p>
+
+</div>
+
+<div class="title"> 6. Terms</div>
+<button class="collapsible">All terms</button>
+<div class="content">
+	<p>List:
+		<ul>
+			<li>JSON: It's a lightweight data interchange format commonly used in web development for transmitting structured data due to its simplicity and easy parsing by machines.</li>
+			<li>XML: This markup language encodes documents hierarchically, making it versatile for various applications like web services and data exchange, although it's more verbose compared to JSON.</li>
+			<li>YAML: YAML is a human-readable data serialization format popular for configuration files, offering easy readability and support for complex data structures like lists and dictionaries.</li>
+      <li>TOML: TOML is a simple configuration file format designed for human readability, featuring straightforward syntax and support for key-value pairs and nested tables.</li>
+      <li>Markdown: Markdown is a lightweight markup language commonly used for formatting plain text documents, offering simplicity and easy conversion to HTML for creating structured content like documentation and README files.</li>
+		</ul>
+	</p>
+
+</div>
+
+<div class="title"> 7. Libraries and Frameworks</div>
+<button class="collapsible">Libraries</button>
+<div class="content">
+	<p>
+    <p>Libraries:
+      <ol>
+        <li>jQuery</li>
+        <li>Lodash</li>
+      </ol>
+    </p>
+	</p>
+</div>
+<button class="collapsible">Frameworks</button>
+<div class="content">
+	<p>
+    <p>Frameworks:
+      <ol>
+        <li>React</li>
+        <li>Angular</li>
+      </ol>
+    </p>
+	</p>
+</div>
+
+<div class="title"> 8. Backend terms</div>
+<button class="collapsible">JavaScript</button>
+<div class="content">
+	<p>
+    It's a scripting language used primarily for web development to add interactivity and dynamic behavior to web pages.
+	</p>
+</div>
+<button class="collapsible">TypeScript</button>
+<div class="content">
+	<p>
+    TypeScript is a superset of JavaScript that adds static typing and other features to improve code maintainability and scalability.
+	</p>
+</div>
+<button class="collapsible">Transpile</button>
+<div class="content">
+	<p>
+    Transpiling is the process of converting source code from one programming language to another at the same abstraction level, often used to convert TypeScript or ES6/7 code to browser-compatible JavaScript.
+	</p>
+</div>
+<button class="collapsible">ES6/7</button>
+<div class="content">
+	<p>
+    ES6/7 refers to ECMAScript 6/7, the sixth and seventh versions of the ECMAScript specification that introduced new features to JavaScript, such as arrow functions, classes, and promises.
+	</p>
+</div>
+<button class="collapsible">Node</button>
+<div class="content">
+	<p>
+    Node.js is a runtime environment that executes JavaScript code outside of a web browser, commonly used for building server-side applications and command-line tools.
+    Node.js is not a framework but rather a runtime environment because it provides an environment for executing JavaScript code, but it doesn't impose a specific structure or set of rules for building applications.
+
+	</p>
+</div>
+
+<div class="title"> 9. JavaScript related terms</div>
+<button class="collapsible">Terms</button>
+<div class="content">
+	<p>terms:
+		<ol>
+			<li>CSS: CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML elements in web pages.</li>
+			<li>JavaScript: JavaScript is a scripting language primarily used for adding interactivity and dynamic behavior to web pages.</li>
+			<li>Node: Node.js is a runtime environment that allows executing JavaScript code outside of a web browser, commonly used for building server-side applications.</li>
+      <li>npm: npm (Node Package Manager) is a package manager for JavaScript that helps developers discover, share, and manage packages of code for building JavaScript applications.</li>
+      <li>Express.js: Express.js is a web application framework for Node.js that simplifies the process of building server-side web applications by providing a robust set of features for routing, middleware, and HTTP request handling.</li>
+		</ol>
+	</p>
+</div>
+
+<div class="title"> 10. package manager terms</div>
+<button class="collapsible">terms</button>
+<div class="content">
+	<p>
+    <ol>
+      <li>yarn: Yarn is a package manager for JavaScript that provides faster and more reliable package installations compared to npm.</li>
+      <li>nvm: nvm (Node Version Manager) is a tool that allows developers to easily manage multiple versions of Node.js on their development machine.</li>
+      <li>npm: npm (Node Package Manager) is a package manager for JavaScript that allows developers to manage dependencies and share code with others.</li>
+      <li>npx: npx is a package runner tool that comes with npm, allowing users to execute packages from the npm registry without needing to install them globally.</li>
+      <li>package.json: package.json is a metadata file in npm projects that includes project details and dependencies, used by npm to manage the project's dependencies and scripts.</li>
+      <li>package-lock.json: package-lock.json is a file generated by npm that locks down the version of dependencies installed in a project, ensuring consistent installations across different environments.</li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 12. Material Design</div>
+<button class="collapsible">Google Material Design</button>
+<div class="content">
+	<p>
+    Google Material Design is a design language developed by Google, offering guidelines and principles for creating intuitive and visually appealing user interfaces across platforms.
+	</p>
+</div>
+<button class="collapsible"> MUI Material UI</button>
+<div class="content">
+	<p>
+    MUI (Material-UI) is a popular React UI framework that implements Google's Material Design principles, providing a set of React components and styles for building web applications with a consistent Material Design look and feel.
+	</p>
+</div>
+
+
+<div class="title"> 13. AJAX, XMLHttpRequest (XHR) object, fetch and promise</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>AJAX (Asynchronous JavaScript and XML): AJAX is a technique used in web development to send and receive data from a web server asynchronously without reloading the entire web page.</li>
+      <li>XMLHttpRequest (XHR) object: XHR is an API in web browsers that provides functionality to make HTTP requests from the client-side JavaScript code.</li>
+      <li>Fetch: Fetch is a modern API for making HTTP requests in JavaScript, providing a more flexible and powerful alternative to the XMLHttpRequest (XHR) object.</li>
+      <li>Promise: Promise is a JavaScript object representing the eventual completion or failure of an asynchronous operation, allowing developers to write cleaner and more manageable asynchronous code.</li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 14. Asynchronous, await, vs. synchronous, callback functions, blocking calls vs. nonblocking calls</div>
+<button class="collapsible">Asynchronous</button>
+<div class="content">
+	<p>
+    Operations that can be executed independently of the main program flow, allowing other operations to continue while waiting for the asynchronous operation to complete.
+	</p>
+</div>
+<button class="collapsible">synchronous</button>
+<div class="content">
+	<p>
+    executed one after the other in a sequential manner, where each operation waits for the previous one to complete before starting.
+	</p>
+</div>
+<button class="collapsible">await</button>
+<div class="content">
+	<p>
+    an operator used in asynchronous JavaScript programming to pause the execution of an asynchronous function until a Promise is settled (resolved or rejected), allowing code to wait for the completion of asynchronous tasks without blocking the main program flow.
+	</p>
+</div>
+<button class="collapsible">callback functions</button>
+<div class="content">
+	<p>
+    functions passed as arguments to other functions, to be executed after a specific event or condition occurs, commonly used in asynchronous programming to handle the result of asynchronous operations.
+	</p>
+</div>
+<button class="collapsible">blocking calls vs. nonblocking calls</button>
+<div class="content">
+	<p>
+    Blocking calls are synchronous operations that halt the execution of the program until the operation is completed, whereas non-blocking calls are asynchronous operations that allow the program to continue executing other tasks while waiting for the operation to complete.
+	</p>
+</div>
+
+<div class="title"> 15. Differences among CSS, LESS, SASS (Syntactically Awesome Stylesheet)</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>CSS (Cascading Style Sheets): CSS is a stylesheet language used to describe the presentation of HTML elements in web pages.</li>
+      <li>
+        LESS: LESS is a preprocessor scripting language that extends CSS with variables, mixins, functions, and more, allowing for easier maintenance and organization of stylesheets.
+      </li>
+      <li>
+        SASS (Syntactically Awesome Stylesheets): SASS is another preprocessor scripting language similar to LESS, providing features like variables, nesting, mixins, and inheritance to enhance the functionality of CSS and streamline the styling process.
+      </li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 16. Responsive Web Design</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>
+        Media Queries: Media Queries are a feature of CSS that allows developers to apply styles based on the characteristics of the device or viewport, such as screen size, resolution, orientation, and more, enabling responsive web design.
+      </li>
+      <li>
+        Viewport: Viewport refers to the visible area of a web page in a browser window, and the viewport meta tag in HTML allows developers to control how the webpage is displayed on different devices by specifying the initial scale, width, and other properties.
+      </li>
+      <li>
+        Grid Layout: CSS Grid Layout is a layout system that allows developers to create complex grid-based layouts with rows and columns, providing precise control over the placement and sizing of elements in a webpage.
+      </li>
+      <li>
+        Flexbox: Flexbox is a layout model in CSS that provides a more efficient way to design flexible and responsive layouts, allowing elements to dynamically adjust their size, order, and alignment within a container, making it ideal for building navigation bars, grids, and flexible page sections in responsive web design.
+      </li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 17. Arrow Function</div>
+<button class="collapsible">Basic Syntax</button>
+<div class="content">
+	<p>
+    const add = (a, b) => a + b;
+	</p>
+</div>
+<button class="collapsible">With Multiple Parameters and Block Body</button>
+<div class="content">
+	<p>
+    const greet = (name) => {
+      console.log(`Hello, ${name}!`);
+  };
+  
+	</p>
+</div>
+<button class="collapsible">As a Callback Function</button>
+<div class="content">
+	<p>
+    const numbers = [1, 2, 3, 4, 5];
+    const squared = numbers.map((num) => num * num);
+
+	</p>
+</div>
+
+<div class="title"> 18. CSS frameworks</div>
+<button class="collapsible">Bootstrap</button>
+<div class="content">
+	<p>
+    Bootstrap is a popular CSS framework that provides pre-designed components and responsive grid system, offering a more opinionated approach compared to Tailwind.
+    While Bootstrap provides ready-to-use components out of the box, Tailwind focuses on providing utility classes that developers can use to build custom designs without relying on pre-defined components.
+
+	</p>
+</div>
+<button class="collapsible">Foundation</button>
+<div class="content">
+	<p>
+    Foundation is another CSS framework that offers a responsive grid system and a set of pre-designed UI components similar to Bootstrap.
+    Unlike Tailwind, which emphasizes utility-first approach, Foundation provides a more structured and component-driven development experience.
+
+	</p>
+</div>
+<button class="collapsible">Bulma</button>
+<div class="content">
+	<p>
+    Bulma is a modern CSS framework based on flexbox that focuses on simplicity and flexibility.
+    Similar to Tailwind, Bulma offers utility classes for rapid prototyping and custom styling, but it provides a more minimalist design and a smaller footprint compared to Tailwind's extensive utility classes.
+
+	</p>
+</div>
+
+<div class="title"> 19. MongoDB</div>
+<button class="collapsible">NoSQL</button>
+<div class="content">
+	<p>
+    NoSQL (Not Only SQL) is a term used to describe non-relational database systems that provide flexible data models and horizontal scalability, often used for handling large volumes of unstructured or semi-structured data.
+	</p>
+</div>
+<button class="collapsible">Schema</button>
+<div class="content">
+	<p>
+    a schema defines the structure of the data, including the types of data that can be stored, relationships between different data elements, and constraints on the data.
+	</p>
+</div>
+<button class="collapsible">Collection</button>
+<div class="content">
+	<p>
+    a group of documents stored in the database, similar to a table in relational databases. Collections in MongoDB do not enforce a schema, allowing for flexible and dynamic data structures.
+	</p>
+</div>
+<button class="collapsible">Document</button>
+<div class="content">
+	<p>
+    a basic unit of data in MongoDB, represented as a set of key-value pairs (similar to JSON objects) stored in BSON (Binary JSON) format. Documents in MongoDB are analogous to rows in a relational database table.
+	</p>
+</div>
+<button class="collapsible">Database</button>
+<div class="content">
+	<p>
+    a container for collections in MongoDB, providing a mechanism for organizing and managing related data. MongoDB databases are schema-less, allowing collections within the same database to have different structures and schemas.
+	</p>
+</div>
+
+<div class="title"> 20. Application of MongoDB</div>
+<button class="collapsible">Insert One:</button>
+<div class="content">
+	<p>
+    db.student.insertOne({ firstname: 'Bill', lastname: 'Clinton', grade: 80 });
+	</p>
+</div>
+<button class="collapsible">Delete One (by firstname):</button>
+<div class="content">
+	<p>
+    db.student.deleteOne({ firstname: 'Bill' });
+	</p>
+</div>
+<button class="collapsible">Update One (by firstname):</button>
+<div class="content">
+	<p>
+    db.student.updateOne({ firstname: 'Bill' }, { $set: { grade: 85 } });
+	</p>
+</div>
+<button class="collapsible">Retrieve All:</button>
+<div class="content">
+	<p>
+    db.student.find({});
+	</p>
+</div>
+<button class="collapsible">Search Student Documents (by firstname):</button>
+<div class="content">
+	<p>
+    db.student.find({ firstname: 'Bill' });
+	</p>
+</div>
+<button class="collapsible">Increase Grade of Student by 5 (by firstname):</button>
+<div class="content">
+	<p>
+    db.student.updateOne({ firstname: 'Bill' }, { $inc: { grade: 5 } });
+	</p>
+</div>
+
+<div class="title"> 21. HTTP overview</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>HTTP Protocols: HTTP (Hypertext Transfer Protocol) is the foundation of data communication on the World Wide Web.</li>
+      <li>HTTP Methods: HTTP methods specify the type of action to be performed on a resource. Common methods include GET, POST, PUT, DELETE, etc.</li>
+      <li>Request Message: A request message is sent by a client to a server to request a specific action, typically including a URL, HTTP method, headers, and sometimes a body containing data.</li>
+      <li>Response Message: A response message is sent by a server to a client in response to a request, typically containing a status code, headers, and sometimes a body containing data.</li>
+      <li>Message Header Fields: Message header fields contain additional information about the request or response, including metadata such as content type, content length, cookies, caching directives, and more.</li>
+      <li>Response Status Codes: Response status codes indicate the success or failure of a request. They are three-digit numbers categorized into different classes, such as 1xx for informational, 2xx for success, 3xx for redirection, 4xx for client errors, and 5xx for server errors. Some common status codes include 200 OK, 404 Not Found, 500 Internal Server Error, etc.</li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 22. Restful Server</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>RESTful Services: REST (Representational State Transfer) is an architectural style for designing networked applications, and RESTful services are web services that adhere to the principles of REST, such as statelessness, uniform interface, and client-server separation.</li>
+      <li>RESTful API Endpoints: RESTful API endpoints are URLs (Uniform Resource Locators) that represent resources on the server and provide access to data or operations through HTTP methods, such as GET, POST, PUT, DELETE.</li>
+      <li>Routing: Routing is the process of determining how an application responds to client requests at specific endpoints. It involves mapping URLs to server-side functions or handlers that process the request and generate a response.</li>
+      <li>RESTful API: A RESTful API is an API (Application Programming Interface) that follows the principles of REST, providing access to resources over HTTP using standard methods and formats, such as JSON or XML.</li>
+      <li>Client: A client is a software application or system that makes requests to a server over a network, typically using HTTP, to access resources or services provided by the server.</li>
+      <li>Clean URL: Clean URLs, also known as pretty URLs or search engine-friendly URLs, are URLs that are easy to read and understand, typically containing meaningful words or phrases that describe the content of the resource.</li>
+      <li>Resource: In the context of RESTful services, a resource is a data entity or object that can be accessed or manipulated through the API, such as a user, product, or post.</li>
+      <li>Endpoints: Endpoints are specific URLs within a RESTful API that represent resources and define the operations that can be performed on those resources using HTTP methods, such as GET, POST, PUT, DELETE. Each endpoint typically corresponds to a specific resource or collection of resources.</li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 23. HTTP methods</div>
+<button class="collapsible"></button>
+<div class="content">
+	<p>
+    <ol>
+      <li>POST: Used to submit data to be processed to a specified resource. The data is included in the body of the request, typically used for creating new resources on the server.</li>
+      <li>GET: Requests data from a specified resource. The data is specified in the URL of the request, typically used for retrieving information from the server.</li>
+      <li>PUT: Replaces all current representations of the target resource with the request payload, typically used for updating existing resources on the server.</li>
+      <li>PATCH: Partially updates a resource on the server with the request payload, typically used for modifying existing resources with partial data.</li>
+      <li>DELETE: Deletes the specified resource from the server, typically used for removing resources from the server.</li>
+      <li>OPTIONS: Returns the HTTP methods that the server supports for the specified URL, typically used for discovering the capabilities of the server.</li>
+      <li>HEAD: Similar to GET, but returns only the response headers without the response body, typically used for retrieving metadata about a resource without transferring the entire content.</li>
+      <li>TRACE: Echoes the received request so that a client can see what (if any) changes or additions have been made by intermediate servers, typically used for diagnostic purposes.</li>
+      <li>CONNECT: Establishes a tunnel to the server identified by the target resource, typically used for establishing a secure communication channel through an HTTP proxy.</li>
+    </ol>
+	</p>
+</div>
+
+<div class="title"> 24. JSON</div>
+<button class="collapsible">JavaScript Object</button>
+<div class="content">
+	<p>
+    a collection of key-value pairs, where keys are strings and values can be any data type, including other objects, arrays, functions, etc.
+	</p>
+</div>
+<button class="collapsible">JSON String</button>
+<div class="content">
+	<p>
+    a lightweight data interchange format derived from JavaScript object notation, used to represent data as a string in a human-readable format.
+	</p>
+</div>
+<button class="collapsible">JSON.parse</button>
+<div class="content">
+	<p>
+    a method in JavaScript used to parse a JSON string and convert it into a JavaScript object, allowing you to access the data within the string as a JavaScript object.
+	</p>
+</div>
+<button class="collapsible">JSON.stringify</button>
+<div class="content">
+	<p>
+    a method in JavaScript used to convert a JavaScript object into a JSON string, allowing you to serialize the object into a format that can be easily transmitted over the network or stored in a file.
+	</p>
+</div>
+
+<div class="title"> 25.	Cross-origin resource sharing</div>
+<button class="collapsible">same-origin policy</button>
+<div class="content">
+	<p>
+    The same-origin policy is a security measure implemented by web browsers that restricts interactions between resources (such as JavaScript, CSS, and HTML) from different origins (domains, protocols, and ports). It prevents a web page or script from making requests to another domain unless they share the same origin, protecting users from cross-site scripting (XSS) attacks and other security vulnerabilities.
+	</p>
+</div>
+
+<div class="title"> 26. three phases</div>
+<button class="collapsible">Mounting</button>
+<div class="content">
+	<p>
+    when a component is being initialized and inserted into the DOM. It involves the creation of the component instance, setting initial state and props, and rendering the component for the first time.
+	</p>
+</div>
+<button class="collapsible">Updating</button>
+<div class="content">
+	<p>
+    when a component's state or props change. It involves re-rendering the component with updated data and potentially performing side effects such as fetching data or updating the DOM.
+	</p>
+</div>
+<button class="collapsible">Unmounting</button>
+<div class="content">
+	<p>
+    when a component is being removed from the DOM. It involves cleaning up any resources or event listeners associated with the component to prevent memory leaks or performance issues.
+	</p>
+</div>
+
+<div class="title"> 27. React Hooks</div>
+<button class="collapsible">useState</button>
+<div class="content">
+	<p>
+    used to add state to functional components in React. It allows you to declare state variables and update them, triggering re-renders when the state changes.
+	</p>
+</div>
+<button class="collapsible">useEffect</button>
+<div class="content">
+	<p>
+    used to perform side effects in functional components. It allows you to execute code in response to component updates, such as fetching data from an API, subscribing to events, or updating the DOM.
+	</p>
+</div>
+<button class="collapsible">useContext</button>
+<div class="content">
+	<p>
+    used to access the context in functional components. It allows you to consume context values provided by a Context Provider higher up in the component tree without needing to pass props down manually.
+	</p>
+</div>
+<button class="collapsible">useRef</button>
+<div class="content">
+	<p>
+    used to create mutable references to DOM elements or other values that persist across renders. It allows you to access and modify the current value of a reference without causing re-renders.
+	</p>
+</div>
+<button class="collapsible">useReducer </button>
+<div class="content">
+	<p>
+    used to manage complex state logic in functional components. It allows you to dispatch actions to update state based on the previous state, similar to how reducers work in Redux.
+	</p>
+</div>
+<button class="collapsible">useCallback</button>
+<div class="content">
+	<p>
+    used to memorize callback functions in functional components. It allows you to prevent unnecessary re-renders by memorizing the callback function when its dependencies haven't changed.
+	</p>
+</div>
+<button class="collapsible">useMemo</button>
+<div class="content">
+	<p>
+    used to memorize values in functional components. It allows you to memorize the result of expensive computations so that they are only recalculated when their dependencies change, improving performance.
+	</p>
+</div>
 
 <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-    /*
-const Example = () => {
-    return React.createElement("div", null, "Hello, React!");
-};
-    
-ReactDOM.render(React.createElement(Example), document.getElementById("root"));
-*/
-    
-    
-const root = ReactDOM.createRoot(document.getElementById('root'));
-    
-root.render(<h1>Hello, worlddddddd!</h1>);
-
-    
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
+
+
+
+
+
+
+</body>
+</html>
 
